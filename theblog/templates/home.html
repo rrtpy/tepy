@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>post</h1>
+
+<ul>
+{% for post in object_list %}
+<div class="card" style="width: 50rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">{{ post.body|slice:":200" }}</p>
+      <a href="{% url 'article-detail' post.pk %}" class="btn btn-primary">view post</a>
+      {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
+      <a href="{% url 'Update_post' post.pk %}" class="btn btn-primary-dark">edit post</a>
+      <a href="{% url 'delete_post' post.pk %}" class="btn btn-primary-dark">delete</a>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+</ul>
+{% endblock %}

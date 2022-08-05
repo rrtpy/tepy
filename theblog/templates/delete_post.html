@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+    edit a blog
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<h1>edit a post</h1>
+<br><br/>
+<h3> Delete: {{ post.title }}</h3>
+<br/>
+<div class = "form-group">
+    <form method ="POST">
+    {% csrf_token %}
+    <strong>Are you sure to delete this Post?</strong><br/>
+    <button class = "btn btn-secondary">Delete</button>
+</div>
+{% else %}
+Nope you cannot do this.
+{% endif %}
+{% endblock %}
