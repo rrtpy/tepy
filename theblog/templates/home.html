@@ -10,8 +10,8 @@
       <a href="{% url 'article-detail' post.pk %}" class="btn btn-primary">view post</a>
       {% comment %} {% if user.is_authenticated %}
         {% if user.id == post.author.id %} {% endcomment %}
-      <a href="{% url 'Update_post' post.pk %}" class="btn btn-primary-dark">edit post</a>
-      <a href="{% url 'delete_post' post.pk %}" class="btn btn-primary-dark">delete</a>
+      {% comment %} <a href="{% url 'Update_post' post.pk %}" class="btn btn-primary-dark">edit post</a>
+      <a href="{% url 'delete_post' post.pk %}" class="btn btn-primary-dark">delete</a> {% endcomment %}
         {% comment %} {% endif %}
       {% endif %} {% endcomment %}
     </div>
