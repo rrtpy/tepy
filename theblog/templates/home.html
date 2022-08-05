@@ -7,7 +7,7 @@
 <div class="card" style="width: 50rem;">
     <div class="card-body">
       <h5 class="card-title">{{ post.title }}</h5>
-      <p class="card-text">{{ post.body|slice:":200" }}</p>
+      <p class="card-text">{{ post.body }}</p>
       <a href="{% url 'article-detail' post.pk %}" class="btn btn-primary">view post</a>
       {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
