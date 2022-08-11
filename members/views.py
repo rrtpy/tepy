@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreation
+from django import UserCreationForm
 from django.urls import reverse_lazy
 
 class UserRegisterView(generic.CreateView):
